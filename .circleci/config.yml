@@ -16,6 +16,7 @@ jobs:
 
      # build the application image
      - run: docker build -t "$IMAGE_NAME" .
+     - run: docker pull sysdiglabs/dummy-vuln-app
      - run: |
          docker login --username "$DOCKER_USER" --password "$DOCKER_PASS"
      # scan the image
